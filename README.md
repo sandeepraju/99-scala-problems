@@ -4,4 +4,4 @@ An attempt at understanding the various available solutions to http://aperiodic.
 
 ## License
 
-The content in this repository is released under the [Creative Commons - Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.
+The content in this repository is released under the [BSD 3-clause "New" or "Revised" License](./LICENSE) license.
