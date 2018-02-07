@@ -36,7 +36,7 @@ object P02 {
     }
   }
 
-  def penultimate[A](l: List[A]): A = l match {
+  def penultimate[A](ls: List[A]): A = ls match {
     case head :: _ :: Nil => head
     case _  :: tail => penultimate(tail)
     case _ => throw new NoSuchElementException

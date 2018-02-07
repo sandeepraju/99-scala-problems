@@ -36,7 +36,7 @@ object P01 {
     }
   }
 
-  def last[A](l: List[A]): A = l match {
+  def last[A](ls: List[A]): A = ls match {
     case head :: Nil => head
     case _ :: tail => last(tail)
     case _ => throw new NoSuchElementException
