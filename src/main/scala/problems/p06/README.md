@@ -1,5 +1,4 @@
-P06. Find out whether a list is a palindrome.
-============================================
+# P06. Find out whether a list is a palindrome.
 
 ## Example
 

@@ -1,5 +1,4 @@
-P02. Find the last but one element of a list
-============================================
+# P02. Find the last but one element of a list
 
 ## Example
 

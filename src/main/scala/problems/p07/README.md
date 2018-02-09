@@ -1,5 +1,4 @@
-P07. Flatten a nested list structure
-============================================
+# P07. Flatten a nested list structure
 
 ## Example
 

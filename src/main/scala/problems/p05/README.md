@@ -1,5 +1,4 @@
-P05. Reverse a list
-============================================
+# P05. Reverse a list
 
 ## Example
 

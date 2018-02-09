@@ -1,5 +1,4 @@
-P03. Find the Kth element of a list
-============================================
+# P03. Find the Kth element of a list
 
 ## Example
 
