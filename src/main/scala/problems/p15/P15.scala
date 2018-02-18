@@ -5,8 +5,6 @@ package problems.p15
 
 import org.scalatest.Assertions._
 
-import scala.annotation.tailrec
-
 object P15 {
   def main(args: Array[String]): Unit = {
     // case 01
