@@ -15,9 +15,13 @@ object P17 {
 
   def split[A](n: Int, ls: List[A]): (List[A], List[A]) = {
 
-    // TODO: add solution here
-
     // Using builtin
-    ls.splitAt(n)
+    // ls.splitAt(n)
+
+    // Using other builtin
+    // (ls.take(n), ls.drop(n))
+
+    // Recursive solution
+    // TODO: implement a recursive solution
   }
 }
