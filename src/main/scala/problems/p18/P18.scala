@@ -3,6 +3,8 @@
 
 package problems.p18
 
+import scala.annotation.tailrec
+
 object P18 {
   def main(args: Array[String]): Unit = {
     // case 01
@@ -41,11 +43,26 @@ object P18 {
   def slice[A](from: Int, until: Int, ls: List[A]): List[A] = {
 
     // builtin
-    ls.slice(from, until)
+    // ls.slice(from, until)
 
-    // do prelim checks
+    @tailrec
+    def sliceRecursive(idx: Int, currentList: List[A], resultList: List[A]): List[A] = (idx, currentList) match {
+      // before the range
+      case (i, _ :: tail) if i < from => sliceRecursive(idx + 1, tail, resultList)
 
+      // we are in the range to slice
+      case (i, head :: tail) if i >= from && i < until => sliceRecursive(idx + 1, tail, resultList :+ head)
 
+      // we have reached the end of range for slicing
+      case (i, _) if i >= until => resultList
 
+      // We have reached the end of list, return the result
+      case (_, Nil) => resultList
+
+      // invalid case
+      case (_, _) if until >= from => resultList
+    }
+
+    sliceRecursive(0, ls, Nil)
   }
 }
