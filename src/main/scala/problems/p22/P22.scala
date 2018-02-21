@@ -1,0 +1,28 @@
+// references:
+// 1. http://aperiodic.net/phil/scala/s-99/p22.scala
+// NOTE: The above link has some slick tail recursive implementations
+
+package problems.p22
+
+object P22 {
+
+  def main(args: Array[String]): Unit = {
+    // case 01
+    assert(range(4, 9) == List(4, 5, 6, 7, 8, 9))
+  }
+
+  def range(start: Int, end: Int): List[Int] = {
+    // builtin 1
+    start to end toList
+
+    // builtin 2
+    List.range(start, end)
+
+    // Functional way using "unfold right"
+    // NOTES:
+    // - fold function folds a iterable (accumulates over the list with one element at a time)
+    // - unfold takes a accumulation and generates a list (iterable)
+    def unfold() = ???
+
+  }
+}
