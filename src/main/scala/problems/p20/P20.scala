@@ -3,7 +3,7 @@
 // NOTE: The above link has a recursive implementation
 // which partially uses builtins.
 
-package problems.p21
+package problems.p20
 
 import java.util.NoSuchElementException
 import org.scalatest.Assertions._
