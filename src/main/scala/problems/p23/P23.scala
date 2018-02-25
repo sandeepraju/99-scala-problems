@@ -16,7 +16,7 @@ object P23 {
 
   def main(args: Array[String]): Unit = {
     // case 01
-    assert(randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)) == List('f, 'a, 'b))
+    assert(randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)) == List('h, 'a, 'g))
 
     // case 02
     assertThrows[NoSuchElementException] {
@@ -24,10 +24,16 @@ object P23 {
     }
 
     // case 03
-    assert(randomSelect(1, List('a, 'b)) == List('a))
+    assert(randomSelect(1, List('a, 'b)) == List('b))
 
     // case 04
-    assert(randomSelect(3, List('a, 'b, 'c)) == List('a, 'c, 'b))
+    assert(randomSelect(3, List('a, 'b, 'c)) == List('b, 'c, 'a))
+
+    // case 05
+    assert(randomSelect(1, List('a)) == List('a))
+
+    // case 06
+    assert(randomSelect(6, List('a, 'b, 'c, 'd, 'e, 'f)) == List('e, 'a, 'c, 'f, 'd, 'b))
   }
 
   def randomSelect[A](n: Int, ls: List[A]): List[A] = {
@@ -41,14 +47,15 @@ object P23 {
     }
 
     @tailrec
-    def randomSelectTailRecursive(picks: List[Int], ls: List[A], result: List[A]): List[A] = picks match {
+    def randomSelectTailRecursive(idx: List[Int], ls: List[A], result: List[A]): List[A] = idx match {
+      case i if i.length > ls.length => throw new NoSuchElementException()
       case Nil => result
-      case (head :: tail) =>
-        val (nextList, removed) = removeAt(head, ls)
+      case (_ :: tail) =>
+        val removeIdx = Random.nextInt(ls.length)
+        val (nextList, removed) = removeAt(removeIdx, ls)
         randomSelectTailRecursive(tail, nextList, removed :: result)
     }
 
-    val picks = (0 until n).map(_ => Random.nextInt(n)).toList
-    randomSelectTailRecursive(picks, ls, Nil)
+    randomSelectTailRecursive((0 until n).toList, ls, Nil)
   }
 }
