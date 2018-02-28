@@ -8,5 +8,7 @@ object P26 {
   def main(args: Array[String]): Unit = {
   }
 
-  def combinations[A](k: Int, ls: List[A]): List[List[A]] = ???
+  def combinations[A](k: Int, ls: List[A]): List[List[A]] = {
+    def combinationRecursive(idx: Int): List[A] = ???
+  }
 }
