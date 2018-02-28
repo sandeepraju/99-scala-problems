@@ -20,7 +20,7 @@ object P23 {
 
     // case 02
     assertThrows[NoSuchElementException] {
-      assert(randomSelect(3, List()) == List())
+      randomSelect(3, List()) == List()
     }
 
     // case 03
