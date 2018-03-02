@@ -7,4 +7,10 @@ object P27 {
 
   def main(args: Array[String]): Unit = {
   }
+
+  def group3[A](ls: List[A]): List[List[List[A]]] = {
+    if (ls.length != 9) throw new IllegalArgumentException()
+
+    ???
+  }
 }
