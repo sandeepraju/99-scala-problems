@@ -13,4 +13,6 @@ object P27 {
 
     ???
   }
+
+  def group[A](sizes: List[Int], ls: List[A]): List[List[List[A]]] = ???
 }
